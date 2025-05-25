@@ -1,0 +1,88 @@
+Instalar Python
+
+1.- Descargar/instalar última versión de Python (importante marcar para que agregue Python a PATH)
+2.- Descargar/instalar Visual Studio Code (importante marcar para que agregue VSC a PATH)
+3.- Crear carpeta donde se guardará el proyecto
+4.- Dentro de VSC
+	Crear workspace (en la carpeta creada)
+	Abrir carpeta (la creada)
+	New file... (aquí se empieza a programar)
+
+
+El tipo de variable lo define lo que contiene, lo que le asignes
+CapSensible
+
+100% orientado a objeto, todo es un objeto
+
+Textos con comilla doble o triple comilla (para textos con saltos de líneas incluidos)
+mensaje="""Esto es un mensaje
+con saltos 
+de línea"""
+
+
+Funciones (indentado es obligatorio, indica lo que va dentro de la función)
+def nombre_funcion (parámetros):
+    instrucción
+    instrucción
+    return   <- es opcional, se usa si la función devuelve parámetros
+
+
+Listas (similar array) 
+Valores entre corchetes miLista=["Yo", "Tú", "Él", "Ella"]
+puede aguardar diferentes tipos de datos
+Indice comienza en 0
+índice negativo, empieza a contar desde el final siendo el último -1 (no 0)
+Acceder a una porción:  miLista[0:3]  <- incluye el inicial y no incluye el final
+			miLista[:2]  >- desde el cero hasta el anterior al 2
+			miLista[2:]  >- desde el 2 hasta el final
+miLista.append("Ellos") <- agrega al fina de la lista un nuevo elemento
+miLista.insert(2, "Ellos")  <- inserta un elemento en el índice que indica el primer parámetro
+miLista.extend(["Nosotros", "Ustedes", "Ellos"]) <- agrega los elementos al final de la lista original (similar a concatenar 2 listas)
+miLista.index("Ella") <- devuelve el índice donde está el elemento, si está varis veces devuelve la primera vez que lo encuentra
+"Ella" in miLista <- devuelve True si encuentra el valor, False si no
+miLista.remove("Él")  <- elimina el elemento indicado
+miLista.pop()  <- elimina el último elemento agregado a la lista
++ <- se pueden concatenar dos listas, en una tercera lista se ponen los elementos de las dos lista sumadas
+	miLista3=miLista1+miLista2
+* <- repite en la lista los elementos las veces que indique el número detrás del operador
+	miLista=["Yo", "Tú", "Él", "Ella"]*3
+
+
+Tuplas: listas inmutables 
+	no permite agregar, eliminar (no append, extend, remove) 
+	si permite acceder a porciones pero el resultado es una tupla nueva
+	no permite búsquedas (no index) / últimas versiones si lo permiten, similar a las listas
+	si comprobar si un elemento está (in)
+miTupla=("Yo", "Tú", "Él", "Ella")
+miTupla="Yo", 21, 6, 1986  <- se puede prescindir de los paréntesis (empaquetado de tupla) pero no es recomendable
+nombre, dia, mes, anno=miTupla  <- desempaquetado de tupla, se asignan los valores de la tupla por orden a las variables creadas
+print(miTupla[2])
+miTupla.count("Yo")  <- cuántas veces se encuentra el elemento en la tupla
+len(miTupla)  <- cantidad de elementos en la tupla
+miTupla=("Yo",)  <- tupla unitaria, tiene un solo elemento
+miLista=list(miTupla)  <- convertir tupla en lista
+miTupla=tuple(miLista)  <- convertir lista en tupla
+
+
+Diccionarios: puede almacenar cualquier tipo de datos (entero, cadena, decimal, incluso listas y otros diccionarios)
+	se usa una asociación clave: valor <- a cada valor almacenado se le asigna una clave única
+	el orden de almacenaje no es importante, cada valor tiene una clave única y no importa en qué posición está
+miDicc={"Alemania":"Berlin", "Francia":"Paris", "Cuba":"La Habana"} <- a cada país(clave) se le asigna una capital(valor)
+miDicc["Cuba"] <- devuelve "La Habana" 
+print(miDicc) <- imprime el diccionario completo. todos los pares clave:valor
+print(miDicc["Cuba"]) <- imprime el valor asociado
+miDicc["Italia"]="Lisboa" <- adiciona un elemento nuevo (un par clave:valor) al final 
+miDicc["Italia"]="Roma"  <- asignamos un nuevo valor a la clave, lo modifica
+del(miDicc["Alemania"]) <- elimina la pareja clave:valor de la clave indicada
+miDicc={"Alemania":"Berlin", 23:"Jordan", "Mosqueteros":2}  <- de diferentes tipos de datos
+
+miTupla=["Alemania", "Francia", "Cuba"]		<- duda ¿tupla o lista?
+miDicc={miTupla[0]:"Berlin", miTupla[1]:"Paris", miTupla[2]:"La Habana"}
+
+miDicc={23:"Jordan", "Nombre":"Michael", "Equipo":"Chicago", "anillos":[1991,1992,1993,1996,1997,1998]}
+miDicc={23:"Jordan", "Nombre":"Michael", "Equipo":"Chicago", "anillos":{"temporadas":[1991,1992,1993,1996,1997,1998]}} <- un diccionario guardado en otro
+
+miDicc.keys()  <- devuelve las claves del diccionario
+miDicc.values()  <- devuelve los valores del diccionario
+len(miDicc) <- devuelve la cantidad de parejas clave:valor que tiene el diccionario
+
