@@ -1,3 +1,4 @@
+#ejemplo de sentencia if
 print("Programa de Evaluación")
 
 nota_alumno=input("Introduce la nota del alumno: ")
