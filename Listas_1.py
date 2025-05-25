@@ -1,4 +1,4 @@
-I#mprimir una lista
+#Imprimir una lista
 miLista=["Yo", "Tú", "Él", "Ella"]
 
 print(miLista[:]) 
