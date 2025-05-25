@@ -9,3 +9,4 @@ def Evalua(nota):
     return valoracion
 
 print(Evalua(int(nota_alumno)))
+#haciendo pruebas de varis ramas
