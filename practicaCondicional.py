@@ -6,6 +6,7 @@ if 0<edad<100:
 else:
     print("Edad incorrecta")
 
+#esta línea debe aparecer debajo
 """
 
 salario_presidente=int(input("Salario presidente: "))
