@@ -86,3 +86,136 @@ miDicc.keys()  <- devuelve las claves del diccionario
 miDicc.values()  <- devuelve los valores del diccionario
 len(miDicc) <- devuelve la cantidad de parejas clave:valor que tiene el diccionario
 
+Instrucción Input: todo lo que se introduce en input se valora como texto
+
+Ámbito de una variable: donde se declara ahí es su ámbito, si se declara dentro de un if no se puede ver fuera
+
+if edad<18:
+	instrucciones
+elif:
+	instrunciones
+else:
+	instrucciones
+
+
+Concatenación de operadores de comparación
+0<edad<100
+
+algo_de_tipo_str.lower()  <- lo convierte a minusculas
+algo_de_tipo_str.upper()
+
+
+print(“Hola”)  <- por defecto terimna en un salto de línea
+print(“Hola”, end=” ”) <- al final de la cadena impresa pone un espacio en blnco, no un salto de línea
+print(f”El salario es: {salario}”)  <-función f que permite unir varios tipos de datos
+
+Bucles
+for variable in elemento_a_recorrer:
+for i in [1.2.3]:
+for i in [“primavera”,”verano”,”otoño”,”invierno”]: <- se ejecuta 4 veces, la i va adquiriendo cada uno de los valores citados al la lista
+for i in “cadena_de_caracteres”:  <- repite el dulce tantas veces como letras tiene la cadena
+for i in range(5):  <-  range crea una lista o array de 5 elementos: desde 0 al 4
+	range(5,10)  <- rango empieza en 5 termina en 9
+	range(5,50,3)  <- del 5 al 49 de 3 en 3
+
+
+While condicion:
+i=1
+While i<=10:
+
+Dentro de los bucles: en el video 18 (no me queda muy claro)
+Break, continue, pass y else
+Break: interrumpe el while
+continue: ignora es vuelta de bucle a partir de la lectura de esta instrucción
+pass: devuelve null, es como si no se ejecutara el bucle, cuando se va a dejar para después el desarrollo del bucle/clase/función, hace que continúe la ejecución, no se detenga
+else: similar a en el if
+
+
+Generadores: 
+-similar a funciones pero devuelve los valores de uno en uno dentro de un generador iterable
+-cuando se le invoca genera un valor y se detiene en standby has que se le pida el siguiente
+-devuelve con yield aunque algunos también puede tener return
+Especial para generar valores infinitos, te detienes cuando no necesites uno más
+def generaNumerosPares():
+	instruciones
+	yield numeros
+paresDevueltos=generaNomerosPares(10)
+next(paresDevueltos)
+
+yield from: funciona como los for anidados, 
+    for elem in ciudades:
+        for subelem in elem:
+            yield subelem
+es lo mismo que:
+    for elem in ciudades:
+        yield from elem
+Tratamiento de Excepciones: (capturando errores para su tratamiento)
+Try:
+	instrucción que puede generar un error
+except Tipo_de_error_que_puede_generar:
+	instrucciones a ejecutar en caso de error
+finally:
+	instrucciones que se ejecutarán ocurra error o no
+
+While True:  #bucle infinito, solo se sale por el break cuando los dos valores son integer
+	try:
+	op1=(int(input(Introduce el primer número: )))	
+	op2=(int(input(Introduceel segundo número: )))
+	break
+except ValueError:
+	print (“Los valores no son correctos,inténtelo de nuevo”)
+Se pueden utilizar varias cláusulas except error:  consecutivas para capturar diferentes tipos de error, igual se puede poner una sola cláusula except: sin el error a capturar y con instrucciones a realizar de forma genérica para todos los errores
+
+raise: para lanzar excepciones (provocarla de forma intensionada)
+la excepción lanzada habría que manejarla con un bloque Try
+
+POO:
+Clases <-> objetos / instancias / ejemplar <-< estado, propiedades, comportamiento
+Modularización
+encapsulamiento <-> métodos de acceso
+Herencia
+Polimorfismo
+
+class Coche():
+    largoChasis=250
+    anchoChasis=120
+    ruedas=4
+    enmarcha=False
+
+
+    def arranca(self):
+        pass
+miCoche=Coche()
+
+
+métodos
+def nombre_metodo(self):  <- self puntero a síu mismo, primer parámetro, es obligatorio
+	pass
+
+No existe el new tan popular en otros lenguajes
+
+Constructor
+def __init__(self):
+
+para encapsular propiedades y métodos se pone __ delante, una propiedad o un método encapsulado es accesible solo desde dentro de la clase
+
+Herencia: facilita reutilización de código. Python permite herencia múltiple y tiene preferencia el constructor de la clase que se ponga primero al heredar
+
+
+
+
+GIT
+git init
+crea dos áreas de almacenaje de archivos
+	staging area (area de ensayo): almacena de forma temporal
+	Repositorio local: almacenaje definitivo de las versiones de los archivos 
+git add nombre_de_archivo
+se lleva el archivo desde el directorio de trabajo al área de ensayo
+git commit -m “descripcion”
+crea una instantánea del archivo
+descripción: texto que nosotros ponemos para describir el estado guardado
+git status -s
+muestra todo lo que git tiene constancia de que existe y no se hace respaldo
+?? a la izquierda no tienen seguimiento de Git
+A están el Staging area
+M archivo modificado y la modificación no se ha respaldado
